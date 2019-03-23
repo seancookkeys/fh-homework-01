@@ -1,89 +1,75 @@
-# Homework 1 - Debugging Rails Application
+# <Project Name>
 
-## Due Date
+<Project Description>
 
-TBD
+This app powers <Project Name> located [here](Heroku Project URL)
 
-## Goals
+## Getting Started
 
-- The purpose of this homework assignment is to use unit tests to debug a Rails
-  application.
+## Software requirements
 
-## Readings and Resources
+- Rails 5.0.0 or higher
 
-NA
+- Ruby 2.3.1 or higher
 
-## Project Setup
+- PostgreSQL 9.5.x or higher
+
+## Navigate to the Rails application
+
+```
+$ cd /path/to/rails/application
+```
+
+## Set configuration files
+
+```
+$ cp config/database.yml.template config/database.yml
+$ cp config/initializers/mail.rb.template config/initializers/mail.rb
+```
+
+Note:  You may need to edit the above files as necessary for your system.
+
+## Create the database
+
+ ```
+ $ pgstart
+ $ rake db:create
+ ```
+
+## Migrating and seeding the database
+
+```
+$ rake db:migrate
+$ rake db:seed
+```
+
+## Starting the local server
+
+```
+$ rails server
+
+   or
+
+$ rails s
+```
+
+## Production Deployment
 
   ```
-  $ sudo apt-get update
-  $ sudo apt-get install sqlite3 libsqlite3-dev
-  $ unzip homework-01.zip
-  $ cd /path/to/rails/homework-01
-  $ bundle install
-  $ rails db:create
-  $ rails db:migrate
+  $ git push heroku master
+  $ heroku run rake db:migrate
   ```
 
-  Note:  Do not type `$` in the above.  Just the command that follows.
+## Support
 
-- Test your basic understanding of debugging a Rails application through the
-  following:
+Bug reports and feature requests can be filed with the rest for the Ruby on Rails project here:
 
-  - verify that the following works as expected
+* [File Bug Reports and Features](https://github.com/<user-name>/<project-repo>/issues)
 
-    - creating author
+## License
 
-    - editing author
+<Project Name> is released under the [MIT license](https://mit-license.org).
 
-    - deleting author
+## Copyright
 
-    - listing author
-
-    Note:  You can execute the units tests to verify that things are working
-           correctly by running the unit tests as follows in the root directory
-           of the project:
-
-           ```
-           $ rspec
-           ```
-
-           Note:  Do not type `$` in the above.  Just the command that follows.
-
-           You are done when the above command generates the similar output:
-
-           ```
-           .............................
-
-           Finished in 0.50812 seconds (files took 1.37 seconds to load)
-           29 examples, 0 failures
-           ```
-
-    - running a specific test
-
-    ```
-    $ rspec ./spec/controllers/authors_controller_spec.rb:36
-    $ rspec ./spec/controllers/authors_controller_spec.rb:52
-    $ rspec ./spec/controllers/authors_controller_spec.rb:68
-    $ rspec ./spec/controllers/authors_controller_spec.rb:74
-    $ rspec ./spec/controllers/authors_controller_spec.rb:80
-    $ rspec ./spec/controllers/authors_controller_spec.rb:87
-    $ rspec ./spec/controllers/authors_controller_spec.rb:93
-    $ rspec ./spec/controllers/authors_controller_spec.rb:106
-    $ rspec ./spec/controllers/authors_controller_spec.rb:112
-    $ rspec ./spec/controllers/authors_controller_spec.rb:118
-    $ rspec ./spec/controllers/authors_controller_spec.rb:126
-    $ rspec ./spec/controllers/authors_controller_spec.rb:132
-    $ rspec ./spec/controllers/authors_controller_spec.rb:141
-    $ rspec ./spec/controllers/authors_controller_spec.rb:148
-    $ rspec ./spec/requests/authors_spec.rb:5
-    $ rspec ./spec/views/authors/index.html.erb_spec.rb:19
-    ```
-
-## Deliverables
-
-  - create a repo called `homework-01` and push your solution to Github.com
-
-## Have Questions
-
-Please make a reasonable effort to complete the homework prior to our next session.  If you have any questions regarding this homework, please do send me a message via Slack.
+copyright:: (c) Copyright 2018 <First Name> <Last Name>. All Rights Reserved.
